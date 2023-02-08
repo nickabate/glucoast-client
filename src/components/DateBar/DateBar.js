@@ -1,18 +1,22 @@
 import "./DateBar.scss";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+// import axios from "axios";
+// import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function DateBar({ allWeeks, weekId }) {
   const currentWeek = allWeeks[weekId - 1];
-  //   console.log(currentWeek);
+  console.log(currentWeek);
+
+  if (!currentWeek) {
+    return <div>Click on any week to see your activity log!</div>;
+  }
 
   return (
     <section>
       {currentWeek.map((date) => (
-        <Link key={date.id} to={`/${weekId}/${date.day}`}>
-          <p>{date.weekday}</p>
-        </Link>
+        <NavLink key={date.id} to={`/${weekId}/${date.day}`}>
+          {date.weekday}
+        </NavLink>
       ))}
     </section>
   );
