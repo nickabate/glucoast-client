@@ -34,7 +34,7 @@ export default function UserContent() {
       }
     }
     getWeeks();
-  }, []);
+  }, [weekId]);
 
   return (
     <>
