@@ -4,6 +4,7 @@ import PageHeader from "./components/PageHeader/PageHeader";
 import "./App.scss";
 import EditDate from "./components/EditDate/EditDate";
 import AddDate from "./components/AddDate/AddDate";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/editdate/:dateId" element={<EditDate />} />
         <Route path="/newdate/:weekId" element={<AddDate />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

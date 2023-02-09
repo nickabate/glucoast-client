@@ -1,5 +1,6 @@
 import "./DisplayDate.scss";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function DisplayDate({ dateId, weekId, allWeeks }) {
   // const displayedWeek = allWeeks[weekId - 1];
@@ -49,6 +50,7 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
       <p>{displayedDate.insulin3}</p>
       <p>{displayedDate.sleep} hours of sleep</p>
       <p>{displayedDate.exercise ? "yes" : "no"}</p>
+      <Link to={`/editdate/${displayedDate.id}`}>EDIT DATE</Link>
     </>
   );
 }
