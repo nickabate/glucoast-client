@@ -2,7 +2,10 @@ import "./DisplayDate.scss";
 import { useEffect, useState } from "react";
 
 export default function DisplayDate({ dateId, weekId, allWeeks }) {
-  const displayedWeek = allWeeks[weekId - 1];
+  // const displayedWeek = allWeeks[weekId - 1];
+  const displayedWeek = allWeeks
+    .filter((current) => current.week === +weekId)
+    .sort((a, b) => a.day - b.day);
   const [displayedDate, setDisplayedDate] = useState({});
 
   useEffect(() => {
@@ -13,12 +16,16 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     }
   }, [dateId, displayedWeek]);
 
-  console.log(displayedWeek);
-  console.log(dateId);
-  console.log(displayedDate);
+  // console.log(displayedWeek);
+  // console.log(dateId);
+  // console.log(displayedDate);
 
   if (!weekId) {
     return <div>Pick a week first to view your activity!</div>;
+  }
+
+  if (!displayedWeek.length) {
+    return <div>No data has been input for this week!</div>;
   }
 
   if (!dateId) {
@@ -27,10 +34,6 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
 
   if (!displayedDate) {
     return <div>No displayed date state!</div>;
-  }
-
-  if (!displayedWeek) {
-    return <div>No week selected!</div>;
   }
 
   return (
