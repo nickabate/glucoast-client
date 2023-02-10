@@ -1,10 +1,61 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+p {
+  font-size: 1.6rem;
+}
+
 .activeday {
   background-color: $primary-bg;
   border: solid 0.2rem $primary-head;
   border-radius: 0.6rem;
-  padding: 1rem;
+  padding: 2.4rem;
   margin-top: 1rem;
+
+  &__header {
+    font-size: 2.4rem;
+    color: $primary-head;
+  }
+
+  &__subheader {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $primary-head;
+    margin-top: 1.6rem;
+  }
+
+  &__meals {
+    margin: 2.4rem 0;
+    @include flex(row);
+    justify-content: space-around;
+  }
+
+  &__meal {
+    padding: 0.4rem 2rem 2rem;
+    background-color: $primary-bg2;
+    border-radius: 0.6rem;
+    width: 24rem;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.31);
+  }
+
+  &__info {
+    @include flex(row);
+    justify-content: space-evenly;
+    margin: 2.4rem 0;
+  }
+
+  &__stats {
+    @include flex(row);
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  &__icon {
+    width: 3.6rem;
+  }
+
+  &__visualization {
+    @include flex(row);
+    justify-content: center;
+  }
 }

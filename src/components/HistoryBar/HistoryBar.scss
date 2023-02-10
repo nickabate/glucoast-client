@@ -2,11 +2,13 @@
 @use "../../styles/partials/variables" as *;
 
 .history {
+  min-width: 14rem;
   @include flex(column);
   background-color: $primary-bg;
   border: solid 0.2rem $primary-head;
   border-radius: 0.6rem;
   padding: 1rem;
+  align-items: center;
 
   &__header {
     color: $primary-text;
