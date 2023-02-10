@@ -1,0 +1,13 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.main {
+  background-color: $primary-bg2;
+  padding: 2rem;
+  @include flex(row);
+
+  &__container {
+    margin-left: 1rem;
+    width: 100%;
+  }
+}

@@ -37,10 +37,12 @@ export default function UserContent() {
   }, [weekId]);
 
   return (
-    <>
+    <main className="main">
       <HistoryBar allWeeks={allWeeks} />
-      <DateBar weekId={weekId} allWeeks={allWeeks} />
-      <DisplayDate dateId={dateId} weekId={weekId} allWeeks={allWeeks} />
-    </>
+      <div className="main__container">
+        <DateBar weekId={weekId} allWeeks={allWeeks} />
+        <DisplayDate dateId={dateId} weekId={weekId} allWeeks={allWeeks} />
+      </div>
+    </main>
   );
 }

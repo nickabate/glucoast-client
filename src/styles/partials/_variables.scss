@@ -1,17 +1,17 @@
 // Font
-$font-stack: "Quicksand", Arial, sans-serif;
+// $font-stack: "Quicksand", Arial, sans-serif;
+$font-stack: "Poppins", Arial, sans-serif;
 
 // Primary colors
-$primary-first: #323232; // BrainFlix-Black
-$primary-second: #0095ff; // BrainFlix-Blue
-$primary-third: #afafaf; // Silver
-$primary-fourth: #fff; // White
+$primary-bg: #fffffe; // background & button text
+$primary-bg2: #d8eefe; // cloud
+$primary-head: #094067; // headline
+$primary-text: #5f6c7b; // paragraph
+$primary-btn: #3da9fc; // button
 
 // Secondary colors
-$secondary-first: #000; // BrainFlix-DarkBlack
-$secondary-second: #0065ad; // BrainFlix-DarkBlue
-$secondary-third: #e1e1e1; // Mercury
-$secondary-fourth: #fafafa; // Alabaster
+$secondary-first: #90b4ce; // blue
+$secondary-second: #ef4565; // red
 
 // Breakpoint dimensions
 $tablet-breakpoint: 768px;
