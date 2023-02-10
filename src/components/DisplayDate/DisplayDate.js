@@ -32,14 +32,14 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
 
     alert("Date has been deleted!");
     deleteItem();
-    navigate("/");
+    navigate(`/`);
   };
   // console.log(displayedWeek);
   // console.log(dateId);
   // console.log(displayedDate);
 
   if (!weekId) {
-    return <div>Pick a week first to view your activity!</div>;
+    return <div>Pick a week to view your activity!</div>;
   }
 
   if (!displayedWeek.length) {
@@ -60,6 +60,8 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
         <Link to={`/newdate/${weekId}`}>
           Click here to add another date for this week.
         </Link>
+        <p>Additional information for the week summary to go here...</p>
+        <p>DATA VISUALIZATION TO GO HERE?</p>
       </section>
     );
   }

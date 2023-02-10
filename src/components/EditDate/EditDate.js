@@ -52,10 +52,10 @@ export default function EditDate() {
 
     if (
       !e.target.meal1.value ||
-      !e.target.insulin1.value ||
       !e.target.meal2.value ||
-      !e.target.insulin2.value ||
       !e.target.meal3.value ||
+      !e.target.insulin1.value ||
+      !e.target.insulin2.value ||
       !e.target.insulin3.value ||
       !e.target.preglucose1.value ||
       !e.target.postglucose1.value ||
@@ -78,7 +78,7 @@ export default function EditDate() {
   const cancelEdit = (e) => {
     e.preventDefault();
     alert(
-      "Edit cancelled - changes will not be saved! Returning to homepage..."
+      `Edit cancelled - changes will not be saved! Returning to Week ${date.week} summary...`
     );
     navigate(`/${date.week}`);
   };
