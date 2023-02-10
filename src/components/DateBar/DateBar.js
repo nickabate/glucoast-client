@@ -18,7 +18,7 @@ export default function DateBar({ allWeeks, weekId }) {
   return (
     <section>
       {currentWeek.map((date) => (
-        <NavLink key={date.id} to={`/${weekId}/${date.day}`}>
+        <NavLink key={date.id} to={`/${weekId}/${date.id}`}>
           {date.weekday}
         </NavLink>
       ))}
