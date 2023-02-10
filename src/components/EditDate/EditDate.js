@@ -39,6 +39,12 @@ export default function EditDate() {
         insulin1: e.target.insulin1.value,
         insulin2: e.target.insulin2.value,
         insulin3: e.target.insulin3.value,
+        preglucose1: e.target.preglucose1.value,
+        postglucose1: e.target.postglucose1.value,
+        preglucose2: e.target.preglucose2.value,
+        postglucose2: e.target.postglucose2.value,
+        preglucose3: e.target.preglucose3.value,
+        postglucose3: e.target.postglucose3.value,
         sleep: e.target.sleep.value,
         exercise: e.target.exercise.value,
       });
@@ -51,6 +57,12 @@ export default function EditDate() {
       !e.target.insulin2.value ||
       !e.target.meal3.value ||
       !e.target.insulin3.value ||
+      !e.target.preglucose1.value ||
+      !e.target.postglucose1.value ||
+      !e.target.preglucose2.value ||
+      !e.target.postglucose2.value ||
+      !e.target.preglucose3.value ||
+      !e.target.postglucose3.value ||
       !e.target.sleep.value ||
       !e.target.exercise.value
     ) {
@@ -60,7 +72,7 @@ export default function EditDate() {
 
     editDate();
     alert("Data submitted! Returning to home page.");
-    navigate("/");
+    navigate(`/${date.week}`);
   };
 
   const cancelEdit = (e) => {
@@ -68,7 +80,7 @@ export default function EditDate() {
     alert(
       "Edit cancelled - changes will not be saved! Returning to homepage..."
     );
-    navigate("/");
+    navigate(`/${date.week}`);
   };
 
   if (!date) {
@@ -95,6 +107,19 @@ export default function EditDate() {
           defaultValue={date.insulin1}
         />
         <input
+          name="preglucose1"
+          type="text"
+          placeholder="Pre glucose level"
+          defaultValue={date.preglucose1}
+        />
+        <input
+          name="postglucose1"
+          type="text"
+          placeholder="Post glucose level"
+          defaultValue={date.postglucose1}
+        />
+
+        <input
           name="meal2"
           type="text"
           placeholder="Meal 2"
@@ -107,6 +132,19 @@ export default function EditDate() {
           defaultValue={date.insulin2}
         />
         <input
+          name="preglucose2"
+          type="text"
+          placeholder="Pre glucose level"
+          defaultValue={date.preglucose2}
+        />
+        <input
+          name="postglucose2"
+          type="text"
+          placeholder="Post glucose level"
+          defaultValue={date.postglucose2}
+        />
+
+        <input
           name="meal3"
           type="text"
           placeholder="Meal 3"
@@ -117,6 +155,18 @@ export default function EditDate() {
           type="text"
           placeholder="Insulin 3"
           defaultValue={date.insulin3}
+        />
+        <input
+          name="preglucose3"
+          type="text"
+          placeholder="Pre glucose level"
+          defaultValue={date.preglucose3}
+        />
+        <input
+          name="postglucose3"
+          type="text"
+          placeholder="Post glucose level"
+          defaultValue={date.postglucose3}
         />
         <input
           name="sleep"
