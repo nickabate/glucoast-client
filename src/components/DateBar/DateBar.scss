@@ -1,2 +1,18 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.datebar {
+  background-color: $primary-bg;
+  border: solid 0.2rem $primary-head;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  @include flex(row);
+  justify-content: center;
+  gap: 1rem;
+
+  &__date {
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: $primary-head;
+  }
+}

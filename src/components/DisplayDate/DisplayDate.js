@@ -71,10 +71,11 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
   }
 
   return (
-    <>
-      {/* <p>{dateId}</p> */}
-      {/* <p>{displayedDate.id}</p> */}
-      <p>{displayedDate.weekday}</p>
+    <section className="activeday">
+      <h3>
+        Here is your activity logged for {displayedDate.weekday} of Week{" "}
+        {displayedDate.week}
+      </h3>
       <p>{displayedDate.meal1}</p>
       <p>{displayedDate.insulin1} units of insulin</p>
       <p>Glucose level before: {displayedDate.preglucose1}</p>
@@ -94,6 +95,6 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
       <Link to={`/${weekId}`}>
         Click here to go back this week's summary...
       </Link>
-    </>
+    </section>
   );
 }

@@ -1,2 +1,28 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.history {
+  @include flex(column);
+  background-color: $primary-bg;
+  border: solid 0.2rem $primary-head;
+  border-radius: 0.6rem;
+  padding: 1rem;
+
+  &__header {
+    color: $primary-text;
+    font-size: 2.4rem;
+    padding-bottom: 1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $primary-head;
+    font-size: 1.6rem;
+    margin: 0.6rem 0;
+    padding: 0.6rem 0;
+  }
+}
+
+.active {
+  font-weight: 600;
+}
