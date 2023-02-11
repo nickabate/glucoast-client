@@ -38,11 +38,13 @@ export default function UserContent() {
 
   return (
     <main className="main">
-      <HistoryBar allWeeks={allWeeks} />
-      <div className="main__container">
-        <DateBar weekId={weekId} allWeeks={allWeeks} />
-        <DisplayDate dateId={dateId} weekId={weekId} allWeeks={allWeeks} />
-      </div>
+      <section className="main__container1">
+        <HistoryBar allWeeks={allWeeks} />
+        <div className="main__container2">
+          <DateBar weekId={weekId} allWeeks={allWeeks} />
+          <DisplayDate dateId={dateId} weekId={weekId} allWeeks={allWeeks} />
+        </div>
+      </section>
     </main>
   );
 }

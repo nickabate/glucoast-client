@@ -1,10 +1,158 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+p {
+  font-size: 1.6rem;
+}
+
 .activeday {
   background-color: $primary-bg;
   border: solid 0.2rem $primary-head;
   border-radius: 0.6rem;
-  padding: 1rem;
-  margin-top: 1rem;
+  padding: 2.4rem;
+  margin-top: 2rem;
+
+  &__next {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__add {
+    text-decoration: none;
+    color: $primary-head;
+    font-size: 2rem;
+    @include flex(row);
+    justify-content: center;
+    margin-top: 2rem;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+
+  &__header {
+    font-size: 2.4rem;
+    color: $primary-head;
+    text-align: center;
+  }
+
+  &__subheader {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $primary-head;
+    margin-top: 1.6rem;
+  }
+
+  &__meals {
+    margin: 2.4rem 0 0.8rem;
+    @include flex(row);
+    justify-content: center;
+    gap: 3.2rem;
+  }
+
+  &__meal {
+    padding: 0.4rem 2rem 2rem;
+    background-color: $primary-bg2;
+    border-radius: 0.6rem;
+    width: 24rem;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  &__container {
+    @include flex(row);
+    justify-content: center;
+  }
+
+  &__info {
+    @include flex(row);
+    justify-content: space-evenly;
+    margin: 2rem 0 2.4rem;
+    width: 79rem;
+    background-color: $primary-bg2;
+    border-radius: 0.6rem;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    padding: 2rem 0;
+  }
+
+  &__stats {
+    @include flex(row);
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  &__icon {
+    width: 3.6rem;
+  }
+
+  &__visualization {
+    @include flex(row);
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-bg2;
+    margin: 2.4rem 2.4rem 3.2rem;
+    padding: 0 2rem;
+    border-radius: 0.6rem;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  &__glucose {
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  &__levels {
+    color: $primary-head;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__actions {
+    @include flex(row);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__back {
+    text-decoration: none;
+    color: $primary-head;
+    font-size: 2rem;
+
+    &:hover {
+      font-weight: 600;
+      border-bottom: 0.2rem solid $primary-head;
+    }
+  }
+
+  &__editbtn {
+    background-color: $primary-btn;
+    color: $primary-bg;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    font-family: $font-stack;
+    cursor: pointer;
+    height: 5rem;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $primary-head;
+    }
+  }
+
+  &__deletebtn {
+    background-color: $secondary-second;
+    color: $primary-bg;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    font-family: $font-stack;
+    cursor: pointer;
+    height: 5rem;
+    margin-left: 2rem;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $secondary-third;
+    }
+  }
 }

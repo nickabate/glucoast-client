@@ -129,7 +129,10 @@ export default function AddDate() {
           placeholder="Post glucose level"
         />
         <input name="sleep" type="text" placeholder="Sleep" />
-        <input name="exercise" type="text" placeholder="Exercise" />
+        <select name="exercise">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
         <button onClick={cancelNew}>CANCEL ADD</button>
         <button>SUBMIT DATA</button>
       </form>

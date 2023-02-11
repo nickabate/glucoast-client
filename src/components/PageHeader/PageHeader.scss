@@ -2,11 +2,15 @@
 @use "../../styles/partials/variables" as *;
 
 .header {
-  background-color: $primary-bg;
-  padding: 2rem;
-  @include flex(row);
-  justify-content: space-between;
+  max-width: 128rem;
+  margin: 0 auto;
 
+  &__container {
+    background-color: $primary-bg;
+    padding: 2rem;
+    @include flex(row);
+    justify-content: space-between;
+  }
   &__link {
     text-decoration: none;
     color: $primary-head;
@@ -31,5 +35,9 @@
     border-radius: 0.6rem;
     font-family: $font-stack;
     cursor: pointer;
+    font-weight: 600;
+    &:hover {
+      background-color: $primary-head;
+    }
   }
 }

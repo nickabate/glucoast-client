@@ -3,11 +3,17 @@
 
 .main {
   background-color: $primary-bg2;
-  padding: 2rem;
-  @include flex(row);
 
-  &__container {
-    margin-left: 1rem;
+  &__container1 {
+    margin: 0 auto;
+    background-color: $primary-bg2;
+    padding: 2.4rem;
+    @include flex(row);
+    max-width: 128rem;
+    min-height: 78rem;
+  }
+  &__container2 {
+    margin-left: 2rem;
     width: 100%;
   }
 }
