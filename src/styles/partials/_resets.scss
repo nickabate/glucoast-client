@@ -21,3 +21,7 @@ body {
 ul {
   list-style-type: none;
 }
+
+form > * {
+  font-family: $font-stack;
+}
