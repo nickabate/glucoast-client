@@ -10,9 +10,18 @@
   justify-content: center;
   gap: 2rem;
 
+  &__text {
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: $primary-head;
+  }
   &__date {
     text-decoration: none;
     font-size: 2.4rem;
     color: $primary-head;
+
+    &:hover {
+      font-weight: 600;
+    }
   }
 }

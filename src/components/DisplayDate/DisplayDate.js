@@ -54,7 +54,14 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
   // console.log(displayedDate);
 
   if (!weekId) {
-    return <div>Pick a week to view your activity!</div>;
+    return (
+      <section className="activeday">
+        <p className="activeday__next">
+          Once a week is selected, here you'll see a summary of your activity
+          for that day.
+        </p>
+      </section>
+    );
   }
 
   if (!displayedWeek.length) {
@@ -70,13 +77,13 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
 
   if (!dateId) {
     return (
-      <section>
-        <div>{`Select a date above to see your activity for Week ${weekId}!`}</div>
-        <Link to={`/newdate/${weekId}`}>
-          Click here to add another date for this week.
+      <section className="activeday">
+        <p className="activeday__next">{`Select a date above to see your activity for Week ${weekId}!`}</p>
+        <Link className="activeday__add" to={`/newdate/${weekId}`}>
+          Or, click here to add another date for this week.
         </Link>
-        <p>Additional information for the week summary to go here...</p>
-        <p>DATA VISUALIZATION TO GO HERE?</p>
+        {/* <p>Additional information for the week summary to go here...</p>
+        <p>DATA VISUALIZATION TO GO HERE?</p> */}
       </section>
     );
   }
@@ -87,34 +94,34 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
 
   const chartData = [
     {
-      name: "Reading 1",
-      Level: displayedDate.preglucose1,
+      name: "Pre meal 1",
+      "mmol/L": displayedDate.preglucose1,
     },
     {
-      name: "Reading 2",
-      Level: displayedDate.postglucose1,
+      name: "Post meal 1",
+      "mmol/L": displayedDate.postglucose1,
     },
     {
-      name: "Reading 3",
-      Level: displayedDate.preglucose2,
+      name: "Pre meal 2",
+      "mmol/L": displayedDate.preglucose2,
     },
     {
-      name: "Reading 4",
-      Level: displayedDate.postglucose2,
+      name: "Post meal 2",
+      "mmol/L": displayedDate.postglucose2,
     },
     {
-      name: "Reading 5",
-      Level: displayedDate.preglucose3,
+      name: "Pre meal 3",
+      "mmol/L": displayedDate.preglucose3,
     },
     {
-      name: "Reading 6",
-      Level: displayedDate.postglucose3,
+      name: "Post meal 3",
+      "mmol/L": displayedDate.postglucose3,
     },
   ];
 
   const renderLineChart = (
     <LineChart
-      width={600}
+      width={630}
       height={300}
       data={chartData}
       margin={{
@@ -124,7 +131,7 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
         left: 0,
       }}
     >
-      <Line type="monotone" dataKey="Level" stroke="#094067" />
+      <Line type="monotone" dataKey="mmol/L" stroke="#094067" />
       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
       <XAxis dataKey="name" />
       <YAxis tickCount={6} domain={[0, 12]} />
@@ -133,67 +140,105 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     </LineChart>
   );
 
+  const calculateAverage = () => {
+    let averageNum =
+      (Number(displayedDate.preglucose1) +
+        Number(displayedDate.preglucose2) +
+        Number(displayedDate.preglucose3) +
+        Number(displayedDate.postglucose1) +
+        Number(displayedDate.postglucose2) +
+        Number(displayedDate.postglucose3)) /
+      6;
+    return Math.round(averageNum);
+  };
+
+  const totalInsulin = () => {
+    let total =
+      Number(displayedDate.insulin1) +
+      Number(displayedDate.insulin2) +
+      Number(displayedDate.insulin3);
+    return total;
+  };
+
   return (
     <section className="activeday">
       <h2 className="activeday__header">
         Here is your activity logged for {displayedDate.weekday} of Week{" "}
-        {displayedDate.week}.
+        {displayedDate.week}:
       </h2>
       <div className="activeday__meals">
         <div className="activeday__meal">
           <p className="activeday__subheader">Meal 1:</p>
           <p>{displayedDate.meal1}</p>
-          <p className="activeday__subheader">Insulin:</p>
+          <p className="activeday__subheader">Insulin taken:</p>
           <p>{displayedDate.insulin1} units of insulin</p>
           <p className="activeday__subheader">Glucose levels:</p>
-          <p>Before meal - {displayedDate.preglucose1}</p>
-          <p>After meal - {displayedDate.postglucose1}</p>
+          <p>Before meal - {displayedDate.preglucose1} mmol/L</p>
+          <p>After meal - {displayedDate.postglucose1} mmol/L</p>
         </div>
         <div className="activeday__meal">
           <p className="activeday__subheader">Meal 2:</p>
           <p>{displayedDate.meal2}</p>
-          <p className="activeday__subheader">Insulin:</p>
+          <p className="activeday__subheader">Insulin taken:</p>
           <p>{displayedDate.insulin2} units of insulin</p>
           <p className="activeday__subheader">Glucose levels:</p>
-          <p>Before meal - {displayedDate.preglucose2}</p>
-          <p>After meal - {displayedDate.postglucose2}</p>
+          <p>Before meal - {displayedDate.preglucose2} mmol/L</p>
+          <p>After meal - {displayedDate.postglucose2} mmol/L</p>
         </div>
         <div className="activeday__meal">
           <p className="activeday__subheader">Meal 3:</p>
           <p>{displayedDate.meal3}</p>
-          <p className="activeday__subheader">Insulin:</p>
+          <p className="activeday__subheader">Insulin taken:</p>
           <p>{displayedDate.insulin3} units of insulin</p>
           <p className="activeday__subheader">Glucose levels:</p>
-          <p>Before meal - {displayedDate.preglucose3}</p>
-          <p>After meal - {displayedDate.postglucose3}</p>
+          <p>Before meal - {displayedDate.preglucose3} mmol/L</p>
+          <p>After meal - {displayedDate.postglucose3} mmol/L</p>
         </div>
       </div>
-      <div className="activeday__info">
-        <div className="activeday__stats">
-          <img className="activeday__icon" src={bed} alt="Bed" />
-          <p>You got {displayedDate.sleep} hours of sleep today.</p>
+      <div className="activeday__container">
+        <div className="activeday__info">
+          <div className="activeday__stats">
+            <img className="activeday__icon" src={bed} alt="Bed" />
+            <p>You got {displayedDate.sleep} hours of sleep today.</p>
+          </div>
+          <div className="activeday__stats">
+            <img className="activeday__icon" src={health} alt="Health" />
+            <p>
+              {displayedDate.exercise === "Yes"
+                ? "You exercised today - great job!"
+                : "No exercise logged today."}
+            </p>
+          </div>
         </div>
-        <div className="activeday__stats">
-          <img className="activeday__icon" src={health} alt="Health" />
-          <p>
-            {displayedDate.exercise
-              ? "You exercised today - great job!"
-              : "No exercise logged today."}
-          </p>
-        </div>
-      </div>
-      {/* <Link to={`/editdate/${displayedDate.id}`}>EDIT DATE</Link> */}
-      <div>
-        <h3>Here is a summary of your glucose levels logged during the day.</h3>
-        <div className="activeday__visualization">{renderLineChart}</div>
       </div>
       <div>
-        <button onClick={editDate}>EDIT DATE</button>
-        <button onClick={deleteDate}>DELETE DATE</button>
+        <h3 className="activeday__levels">
+          Here is a summary of your glucose levels logged during the day:
+        </h3>
+        <div className="activeday__visualization">
+          <div>
+            <p className="activeday__glucose">
+              Your average glucose level today was {calculateAverage()} mmol/L.
+            </p>
+            <p>You took {totalInsulin()} units of insulin at meals.</p>
+          </div>
+          <div>{renderLineChart}</div>
+        </div>
       </div>
-      <Link to={`/${weekId}`}>
-        Click here to go back this week's summary...
-      </Link>
+      <div className="activeday__actions">
+        <Link className="activeday__back" to={`/${weekId}`}>
+          Click here to go back to this week's summary...
+        </Link>
+        <div>
+          <button className="activeday__editbtn" onClick={editDate}>
+            EDIT DATE
+          </button>
+          <button className="activeday__deletebtn" onClick={deleteDate}>
+            DELETE DATE
+          </button>
+        </div>
+      </div>
+      <p></p>
     </section>
   );
 }

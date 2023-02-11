@@ -19,12 +19,18 @@
   &__link {
     text-decoration: none;
     color: $primary-head;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin: 0.6rem 0;
     padding: 0.6rem 0;
+
+    &:hover {
+      font-weight: 600;
+    }
   }
 }
 
 .active {
   font-weight: 600;
+  border-bottom: 0.2rem solid $primary-head;
+  // background-color: $secondary-first;
 }

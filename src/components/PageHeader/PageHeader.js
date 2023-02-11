@@ -12,13 +12,15 @@ export default function PageHeader() {
 
   return (
     <header className="header">
-      <Link className="header__link" to={"/"}>
-        <img className="header__image" src={blood} alt="Blood drop" />
-        <h3 className="header__title">GLUCOAST</h3>
-      </Link>
-      <button onClick={toLanding} className="header__button">
-        LEARN MORE
-      </button>
+      <section className="header__container">
+        <Link className="header__link" to={"/"}>
+          <img className="header__image" src={blood} alt="Blood drop" />
+          <h3 className="header__title">GLUCOAST</h3>
+        </Link>
+        <button onClick={toLanding} className="header__button">
+          LEARN MORE
+        </button>
+      </section>
     </header>
   );
 }

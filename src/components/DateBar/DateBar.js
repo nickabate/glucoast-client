@@ -15,7 +15,13 @@ export default function DateBar({ allWeeks, weekId }) {
   // console.log(currentWeek);
 
   if (!weekId) {
-    return <div>Click on any week to see your activity log!</div>;
+    return (
+      <section className="datebar">
+        <p className="datebar__text">
+          Click on any week to see your dates logged here!
+        </p>
+      </section>
+    );
   }
 
   if (!currentWeek.length) {
