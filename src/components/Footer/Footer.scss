@@ -4,6 +4,8 @@
 .footer {
   max-width: 128rem;
   margin: 0 auto;
+  background-color: $primary-bg;
+
   &__main {
     background-color: $primary-bg;
     padding: 2rem;

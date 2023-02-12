@@ -116,11 +116,18 @@ p {
     text-decoration: none;
     color: $primary-head;
     font-size: 2rem;
+    @include flex(row);
+    align-items: center;
 
     &:hover {
       font-weight: 600;
       border-bottom: 0.2rem solid $primary-head;
     }
+  }
+
+  &__arrow {
+    width: 2rem;
+    height: 2rem;
   }
 
   &__editbtn {
@@ -133,6 +140,7 @@ p {
     cursor: pointer;
     height: 5rem;
     font-weight: 600;
+    min-width: 10rem;
 
     &:hover {
       background-color: $primary-head;
