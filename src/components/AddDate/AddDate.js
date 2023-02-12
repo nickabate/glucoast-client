@@ -90,52 +90,68 @@ export default function AddDate() {
   };
 
   return (
-    <section>
-      <p>{`Add a date for Week ${weekId}!`}</p>
-      <form onSubmit={newFormSubmit}>
-        <select name="weekday">
-          <option value="Sunday">Sunday</option>
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-        </select>
-        <input name="meal1" type="text" placeholder="Meal 1" />
-        <input name="insulin1" type="text" placeholder="Insulin 1" />
-        <input name="preglucose1" type="text" placeholder="Pre glucose level" />
-        <input
-          name="postglucose1"
-          type="text"
-          placeholder="Post glucose level"
-        />
+    <section className="addform">
+      <div className="addform__main">
+        <div className="addform__container">
+          <p>{`Add a date for Week ${weekId}!`}</p>
+          <form onSubmit={newFormSubmit}>
+            <select name="weekday">
+              <option value="Sunday">Sunday</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+            </select>
+            <input name="meal1" type="text" placeholder="Meal 1" />
+            <input name="insulin1" type="text" placeholder="Insulin 1" />
+            <input
+              name="preglucose1"
+              type="text"
+              placeholder="Pre glucose level"
+            />
+            <input
+              name="postglucose1"
+              type="text"
+              placeholder="Post glucose level"
+            />
 
-        <input name="meal2" type="text" placeholder="Meal 2" />
-        <input name="insulin2" type="text" placeholder="Insulin 2" />
-        <input name="preglucose2" type="text" placeholder="Pre glucose level" />
-        <input
-          name="postglucose2"
-          type="text"
-          placeholder="Post glucose level"
-        />
+            <input name="meal2" type="text" placeholder="Meal 2" />
+            <input name="insulin2" type="text" placeholder="Insulin 2" />
+            <input
+              name="preglucose2"
+              type="text"
+              placeholder="Pre glucose level"
+            />
+            <input
+              name="postglucose2"
+              type="text"
+              placeholder="Post glucose level"
+            />
 
-        <input name="meal3" type="text" placeholder="Meal 3" />
-        <input name="insulin3" type="text" placeholder="Insulin 3" />
-        <input name="preglucose3" type="text" placeholder="Pre glucose level" />
-        <input
-          name="postglucose3"
-          type="text"
-          placeholder="Post glucose level"
-        />
-        <input name="sleep" type="text" placeholder="Sleep" />
-        <select name="exercise">
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-        <button onClick={cancelNew}>CANCEL ADD</button>
-        <button>SUBMIT DATA</button>
-      </form>
+            <input name="meal3" type="text" placeholder="Meal 3" />
+            <input name="insulin3" type="text" placeholder="Insulin 3" />
+            <input
+              name="preglucose3"
+              type="text"
+              placeholder="Pre glucose level"
+            />
+            <input
+              name="postglucose3"
+              type="text"
+              placeholder="Post glucose level"
+            />
+            <input name="sleep" type="text" placeholder="Sleep" />
+            <select name="exercise">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <button onClick={cancelNew}>CANCEL ADD</button>
+            <button>SUBMIT DATA</button>
+          </form>
+        </div>
+      </div>
     </section>
   );
 }

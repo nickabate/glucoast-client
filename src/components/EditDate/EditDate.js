@@ -264,10 +264,10 @@ export default function EditDate() {
               </select>
             </div>
             <div className="editform__buttons">
+              <button className="editform__submit">SUBMIT EDIT</button>
               <button className="editform__cancel" onClick={cancelEdit}>
                 CANCEL EDIT
               </button>
-              <button className="editform__submit">SUBMIT EDIT</button>
             </div>
           </form>
         </div>

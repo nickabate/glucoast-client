@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import bed from "../../assets/icons/bed.svg";
 import health from "../../assets/icons/gym.svg";
+import back from "../../assets/icons/back.svg";
 
 export default function DisplayDate({ dateId, weekId, allWeeks }) {
   // const displayedWeek = allWeeks[weekId - 1];
@@ -220,14 +221,18 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
             <p className="activeday__glucose">
               Your average glucose level today was {calculateAverage()} mmol/L.
             </p>
-            <p>You took {totalInsulin()} units of insulin at meals.</p>
+            <p>
+              You took a total of {totalInsulin()} units of insulin at meals
+              today.
+            </p>
           </div>
           <div>{renderLineChart}</div>
         </div>
       </div>
       <div className="activeday__actions">
         <Link className="activeday__back" to={`/${weekId}`}>
-          Click here to go back to this week's summary...
+          <img className="activeday__arrow" src={back} alt="Back arrow" /> Click
+          here to go back to this week's summary...
         </Link>
         <div>
           <button className="activeday__editbtn" onClick={editDate}>

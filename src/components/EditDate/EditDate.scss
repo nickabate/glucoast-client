@@ -91,6 +91,7 @@
     cursor: pointer;
     height: 5rem;
     font-weight: 600;
+    margin-left: 2rem;
 
     &:hover {
       background-color: $secondary-third;
@@ -114,7 +115,6 @@
     cursor: pointer;
     height: 5rem;
     font-weight: 600;
-    margin-left: 2rem;
 
     &:hover {
       background-color: $primary-head;
