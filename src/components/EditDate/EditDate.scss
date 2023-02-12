@@ -4,7 +4,6 @@
 .editform {
   background-color: $primary-bg2;
   min-height: 78rem;
-  //   padding: 2.4rem;
 
   &__main {
     max-width: 128rem;
@@ -73,28 +72,13 @@
   }
   &__select {
     border-radius: 0.6rem;
-    border: 0.1rem solid $primary-head;
+    border: 0.2rem solid $primary-head;
     padding: 0.4rem;
+    font-family: $font-stack;
+    color: $primary-head;
     &:focus {
       outline-style: none;
       border: 0.2rem solid $primary-btn;
-    }
-  }
-
-  &__cancel {
-    background-color: $secondary-second;
-    color: $primary-bg;
-    border: none;
-    padding: 0 1rem;
-    border-radius: 0.6rem;
-    font-family: $font-stack;
-    cursor: pointer;
-    height: 5rem;
-    font-weight: 600;
-    margin-left: 2rem;
-
-    &:hover {
-      background-color: $secondary-third;
     }
   }
 
@@ -118,6 +102,23 @@
 
     &:hover {
       background-color: $primary-head;
+    }
+  }
+
+  &__cancel {
+    background-color: $secondary-second;
+    color: $primary-bg;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    font-family: $font-stack;
+    cursor: pointer;
+    height: 5rem;
+    font-weight: 600;
+    margin-left: 2rem;
+
+    &:hover {
+      background-color: $secondary-third;
     }
   }
 }

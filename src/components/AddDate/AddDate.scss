@@ -1,2 +1,123 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.addform {
+  background-color: $primary-bg2;
+  min-height: 78rem;
+
+  &__main {
+    max-width: 128rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  &__container {
+    margin: 0 2rem;
+    border: solid 0.2rem $primary-head;
+    border-radius: 0.6rem;
+    padding: 2.4rem;
+    background-color: $primary-bg;
+  }
+
+  &__header {
+    color: $primary-head;
+    font-weight: 600;
+    font-size: 2.4rem;
+  }
+
+  &__grouping {
+    @include flex(row);
+    gap: 0.6rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    background-color: $primary-bg2;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    align-items: center;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  &__grouping2 {
+    @include flex(row);
+    background-color: $primary-bg2;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    width: fit-content;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    margin: 0 auto 2rem;
+  }
+
+  &__label {
+    color: $primary-head;
+    font-weight: 600;
+    font-size: 1.6rem;
+    min-width: 6rem;
+  }
+
+  &__input {
+    border-radius: 0.6rem;
+    border: 0.2rem solid $primary-head;
+    padding: 0.4rem;
+    color: $primary-head;
+    font-family: $font-stack;
+
+    &:focus {
+      outline-style: none;
+      border: 0.2rem solid $primary-btn;
+    }
+  }
+  &__select {
+    border-radius: 0.6rem;
+    border: 0.2rem solid $primary-head;
+    padding: 0.4rem;
+    font-family: $font-stack;
+    color: $primary-head;
+
+    &:focus {
+      outline-style: none;
+      border: 0.2rem solid $primary-btn;
+    }
+  }
+
+  &__buttons {
+    @include flex(row);
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  &__submit {
+    background-color: $primary-btn;
+    color: $primary-bg;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    font-family: $font-stack;
+    cursor: pointer;
+    height: 5rem;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $primary-head;
+    }
+  }
+
+  &__cancel {
+    background-color: $secondary-second;
+    color: $primary-bg;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    font-family: $font-stack;
+    cursor: pointer;
+    height: 5rem;
+    font-weight: 600;
+    margin-left: 2rem;
+
+    &:hover {
+      background-color: $secondary-third;
+    }
+  }
+}

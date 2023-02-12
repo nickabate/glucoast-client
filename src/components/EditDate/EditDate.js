@@ -112,7 +112,7 @@ export default function EditDate() {
                 id="meal1"
                 name="meal1"
                 type="text"
-                placeholder="Meal 1"
+                placeholder="Enter meal..."
                 defaultValue={date.meal1}
               />
               <label className="editform__label" htmlFor="insulin1">
@@ -123,7 +123,7 @@ export default function EditDate() {
                 id="insulin1"
                 name="insulin1"
                 type="text"
-                placeholder="Insulin 1"
+                placeholder="Enter # of units..."
                 defaultValue={date.insulin1}
               />
               <label className="editform__label" htmlFor="preglucose1">
@@ -134,7 +134,7 @@ export default function EditDate() {
                 id="preglucose1"
                 name="preglucose1"
                 type="text"
-                placeholder="Pre glucose level"
+                placeholder="Before meal..."
                 defaultValue={date.preglucose1}
               />
               <label className="editform__label" htmlFor="postglucose1">
@@ -145,7 +145,7 @@ export default function EditDate() {
                 id="postglucose1"
                 name="postglucose1"
                 type="text"
-                placeholder="Post glucose level"
+                placeholder="After meal..."
                 defaultValue={date.postglucose1}
               />
             </div>
@@ -158,7 +158,7 @@ export default function EditDate() {
                 id="meal2"
                 name="meal2"
                 type="text"
-                placeholder="Meal 2"
+                placeholder="Enter meal..."
                 defaultValue={date.meal2}
               />
               <label className="editform__label" htmlFor="insulin2">
@@ -169,7 +169,7 @@ export default function EditDate() {
                 id="insulin2"
                 name="insulin2"
                 type="text"
-                placeholder="Insulin 2"
+                placeholder="Enter # of units..."
                 defaultValue={date.insulin2}
               />
               <label className="editform__label" htmlFor="preglucose2">
@@ -180,7 +180,7 @@ export default function EditDate() {
                 id="preglucose2"
                 name="preglucose2"
                 type="text"
-                placeholder="Pre glucose level"
+                placeholder="Before meal..."
                 defaultValue={date.preglucose2}
               />
               <label className="editform__label" htmlFor="postglucose2">
@@ -191,7 +191,7 @@ export default function EditDate() {
                 id="postglucose2"
                 name="postglucose2"
                 type="text"
-                placeholder="Post glucose level"
+                placeholder="After meal..."
                 defaultValue={date.postglucose2}
               />
             </div>
@@ -204,7 +204,7 @@ export default function EditDate() {
                 id="meal3"
                 name="meal3"
                 type="text"
-                placeholder="Meal 3"
+                placeholder="Enter meal..."
                 defaultValue={date.meal3}
               />
               <label className="editform__label" htmlFor="insulin3">
@@ -215,7 +215,7 @@ export default function EditDate() {
                 id="insulin3"
                 name="insulin3"
                 type="text"
-                placeholder="Insulin 3"
+                placeholder="Enter # of units..."
                 defaultValue={date.insulin3}
               />
               <label className="editform__label" htmlFor="preglucose3">
@@ -226,7 +226,7 @@ export default function EditDate() {
                 id="preglucose3"
                 name="preglucose3"
                 type="text"
-                placeholder="Pre glucose level"
+                placeholder="Before meal..."
                 defaultValue={date.preglucose3}
               />
               <label className="editform__label" htmlFor="postglucose3">
@@ -237,7 +237,7 @@ export default function EditDate() {
                 id="postglucose3"
                 name="postglucose3"
                 type="text"
-                placeholder="Post glucose level"
+                placeholder="After meal..."
                 defaultValue={date.postglucose3}
               />
             </div>
@@ -250,13 +250,17 @@ export default function EditDate() {
                 id="sleep"
                 name="sleep"
                 type="text"
-                placeholder="Sleep"
+                placeholder="# of hours..."
                 defaultValue={date.sleep}
               />
               <label className="editform__label" htmlFor="exercise">
                 Exercise today?
               </label>
-              <select className="editform__select" name="exercise">
+              <select
+                className="editform__select"
+                id="exercise"
+                name="exercise"
+              >
                 <option value="Yes">Yes</option>
                 <option selected={isSelected(date.exercise)} value="No">
                   No

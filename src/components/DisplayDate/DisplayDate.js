@@ -163,10 +163,20 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
 
   return (
     <section className="activeday">
-      <h2 className="activeday__header">
-        Here is your activity logged for {displayedDate.weekday} of Week{" "}
-        {displayedDate.week}:
-      </h2>
+      <div className="activeday__display">
+        <h2 className="activeday__header">
+          Here is your activity logged for {displayedDate.weekday} of Week{" "}
+          {displayedDate.week}:
+        </h2>
+        <div>
+          <button className="activeday__editbtn" onClick={editDate}>
+            EDIT DATE
+          </button>
+          <button className="activeday__deletebtn" onClick={deleteDate}>
+            DELETE DATE
+          </button>
+        </div>
+      </div>
       <div className="activeday__meals">
         <div className="activeday__meal">
           <p className="activeday__subheader">Meal 1:</p>
@@ -214,7 +224,7 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
       </div>
       <div>
         <h3 className="activeday__levels">
-          Here is a summary of your glucose levels logged during the day:
+          Here is a visual summary of your glucose levels logged during the day:
         </h3>
         <div className="activeday__visualization">
           <div>
@@ -234,16 +244,15 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
           <img className="activeday__arrow" src={back} alt="Back arrow" /> Click
           here to go back to this week's summary...
         </Link>
-        <div>
+        {/* <div>
           <button className="activeday__editbtn" onClick={editDate}>
             EDIT DATE
           </button>
           <button className="activeday__deletebtn" onClick={deleteDate}>
             DELETE DATE
           </button>
-        </div>
+        </div> */}
       </div>
-      <p></p>
     </section>
   );
 }
