@@ -1,13 +1,31 @@
 import "./AddDate.scss";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function AddDate() {
+  const [existingDays, setExistingDays] = useState([]);
   const params = useParams();
   let weekId = params.weekId;
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    async function getDays() {
+      try {
+        const { data } = await axios.get("http://localhost:8080/api");
+
+        let dateArray = [];
+        const allDates = data.filter((day) => day.week === +weekId);
+        allDates.forEach((element) => dateArray.push(element.day));
+
+        setExistingDays(dateArray);
+      } catch (e) {
+        console.log("Error:", e);
+      }
+    }
+    getDays();
+  }, [weekId]);
 
   const newFormSubmit = (e) => {
     e.preventDefault();
@@ -76,6 +94,13 @@ export default function AddDate() {
       return;
     }
 
+    if (existingDays.indexOf(dateNum(e.target.weekday.value)) !== -1) {
+      alert(
+        `This date has already been logged for Week ${weekId}! Please select a new date.`
+      );
+      return;
+    }
+
     newDate();
     alert(`Data submitted! Returning to Week ${weekId} summary.`);
     navigate(`/${weekId}`);
@@ -84,7 +109,7 @@ export default function AddDate() {
   const cancelNew = (e) => {
     e.preventDefault();
     alert(
-      `Input cancelled - changes will not be saved! Returning to Week ${weekId} summary...`
+      `Input cancelled - changes will not be saved! Returning to Week ${weekId} summary.`
     );
     navigate(`/${weekId}`);
   };
@@ -93,62 +118,173 @@ export default function AddDate() {
     <section className="addform">
       <div className="addform__main">
         <div className="addform__container">
-          <p>{`Add a date for Week ${weekId}!`}</p>
+          <h2 className="addform__header">{`Add a date for Week ${weekId}!`}</h2>
           <form onSubmit={newFormSubmit}>
-            <select name="weekday">
-              <option value="Sunday">Sunday</option>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
-              <option value="Wednesday">Wednesday</option>
-              <option value="Thursday">Thursday</option>
-              <option value="Friday">Friday</option>
-              <option value="Saturday">Saturday</option>
-            </select>
-            <input name="meal1" type="text" placeholder="Meal 1" />
-            <input name="insulin1" type="text" placeholder="Insulin 1" />
-            <input
-              name="preglucose1"
-              type="text"
-              placeholder="Pre glucose level"
-            />
-            <input
-              name="postglucose1"
-              type="text"
-              placeholder="Post glucose level"
-            />
-
-            <input name="meal2" type="text" placeholder="Meal 2" />
-            <input name="insulin2" type="text" placeholder="Insulin 2" />
-            <input
-              name="preglucose2"
-              type="text"
-              placeholder="Pre glucose level"
-            />
-            <input
-              name="postglucose2"
-              type="text"
-              placeholder="Post glucose level"
-            />
-
-            <input name="meal3" type="text" placeholder="Meal 3" />
-            <input name="insulin3" type="text" placeholder="Insulin 3" />
-            <input
-              name="preglucose3"
-              type="text"
-              placeholder="Pre glucose level"
-            />
-            <input
-              name="postglucose3"
-              type="text"
-              placeholder="Post glucose level"
-            />
-            <input name="sleep" type="text" placeholder="Sleep" />
-            <select name="exercise">
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
-            <button onClick={cancelNew}>CANCEL ADD</button>
-            <button>SUBMIT DATA</button>
+            <div className="addform__grouping2">
+              <label className="addform__label" htmlFor="weekday">
+                Weekday:
+              </label>
+              <select className="addform__select" id="weekday" name="weekday">
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+              </select>
+            </div>
+            <div className="addform__grouping">
+              <label className="addform__label" htmlFor="meal1">
+                Meal 1:
+              </label>
+              <input
+                id="meal1"
+                className="addform__input"
+                name="meal1"
+                type="text"
+                placeholder="Enter meal..."
+              />
+              <label className="addform__label" htmlFor="insulin1">
+                Insulin taken:
+              </label>
+              <input
+                id="insulin1"
+                className="addform__input"
+                name="insulin1"
+                type="text"
+                placeholder="Enter # of units..."
+              />
+              <label className="addform__label" htmlFor="preglucose1">
+                Pre glucose level:
+              </label>
+              <input
+                id="preglucose1"
+                className="addform__input"
+                name="preglucose1"
+                type="text"
+                placeholder="Before meal..."
+              />
+              <label className="addform__label" htmlFor="postglucose1">
+                Post glucose level:
+              </label>
+              <input
+                id="postglucose1"
+                className="addform__input"
+                name="postglucose1"
+                type="text"
+                placeholder="After meal..."
+              />
+            </div>
+            <div className="addform__grouping">
+              <label className="addform__label" htmlFor="meal2">
+                Meal 2:
+              </label>
+              <input
+                id="meal2"
+                className="addform__input"
+                name="meal2"
+                type="text"
+                placeholder="Enter meal..."
+              />
+              <label className="addform__label" htmlFor="insulin2">
+                Insulin taken:
+              </label>
+              <input
+                id="insulin2"
+                className="addform__input"
+                name="insulin2"
+                type="text"
+                placeholder="Enter # of units..."
+              />
+              <label className="addform__label" htmlFor="preglucose2">
+                Pre glucose level:
+              </label>
+              <input
+                id="preglucose2"
+                className="addform__input"
+                name="preglucose2"
+                type="text"
+                placeholder="Before meal..."
+              />
+              <label className="addform__label" htmlFor="postglucose2">
+                Post glucose level:
+              </label>
+              <input
+                id="postglucose2"
+                className="addform__input"
+                name="postglucose2"
+                type="text"
+                placeholder="After meal..."
+              />
+            </div>
+            <div className="addform__grouping">
+              <label className="addform__label" htmlFor="meal3">
+                Meal 3:
+              </label>
+              <input
+                id="meal3"
+                className="addform__input"
+                name="meal3"
+                type="text"
+                placeholder="Enter meal..."
+              />
+              <label className="addform__label" htmlFor="insulin3">
+                Insulin taken:
+              </label>
+              <input
+                id="insulin3"
+                className="addform__input"
+                name="insulin3"
+                type="text"
+                placeholder="Enter # of units..."
+              />
+              <label className="addform__label" htmlFor="preglucose3">
+                Pre glucose level:
+              </label>
+              <input
+                id="preglucose3"
+                className="addform__input"
+                name="preglucose3"
+                type="text"
+                placeholder="Before meal..."
+              />
+              <label className="addform__label" htmlFor="postglucose3">
+                Post glucose level:
+              </label>
+              <input
+                id="postglucose3"
+                className="addform__input"
+                name="postglucose3"
+                type="text"
+                placeholder="After meal..."
+              />
+            </div>
+            <div className="addform__grouping2">
+              <label className="addform__label" htmlFor="sleep">
+                Hours of sleep:
+              </label>
+              <input
+                id="sleep"
+                className="addform__input"
+                name="sleep"
+                type="text"
+                placeholder="# of hours..."
+              />
+              <label className="addform__label" htmlFor="exercise">
+                Exercise today?
+              </label>
+              <select id="exercise" className="addform__select" name="exercise">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div className="addform__buttons">
+              <button className="addform__submit">SUBMIT DATA</button>
+              <button className="addform__cancel" onClick={cancelNew}>
+                CANCEL ADD
+              </button>
+            </div>
           </form>
         </div>
       </div>
