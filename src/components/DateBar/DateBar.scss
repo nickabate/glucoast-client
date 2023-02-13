@@ -25,3 +25,8 @@
     }
   }
 }
+
+.datebar__date.active {
+  font-weight: 600;
+  border-bottom: 0.2rem solid $primary-head;
+}

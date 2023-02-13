@@ -18,6 +18,7 @@ function App() {
         <Route path="/editdate/:dateId" element={<EditDate />} />
         <Route path="/newdate/:weekId" element={<AddDate />} />
         <Route path="/welcome" element={<Landing />} />
+        <Route path="/welcome/:learnId" element={<Landing />} />
       </Routes>
       <Footer />
     </BrowserRouter>
