@@ -17,6 +17,14 @@ p {
     font-size: 2rem;
   }
 
+  &__none {
+    color: $primary-head;
+    font-size: 2rem;
+    @include flex(row);
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
   &__add {
     text-decoration: none;
     color: $primary-head;

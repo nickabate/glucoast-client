@@ -71,7 +71,9 @@ export default function EditDate() {
     }
 
     editDate();
-    alert("Data submitted! Returning to summary page.");
+    alert(
+      `Data submitted! Returning to summary page for ${date.weekday} of Week ${date.week}.`
+    );
     navigate(`/${date.week}/${date.id}`);
   };
 

@@ -76,15 +76,30 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     );
   }
 
+  const numberOfDays = () => {
+    if (displayedWeek.length === 7) {
+      return (
+        <p className="activeday__none">
+          All dates have been added for this week.
+        </p>
+      );
+    } else {
+      return (
+        <Link className="activeday__add" to={`/newdate/${weekId}`}>
+          Or, click here to add another date for this week.
+        </Link>
+      );
+    }
+  };
+
   if (!dateId) {
     return (
       <section className="activeday">
         <p className="activeday__next">{`Select a date above to see your activity for Week ${weekId}!`}</p>
-        <Link className="activeday__add" to={`/newdate/${weekId}`}>
+        {/* <Link className="activeday__add" to={`/newdate/${weekId}`}>
           Or, click here to add another date for this week.
-        </Link>
-        {/* <p>Additional information for the week summary to go here...</p>
-        <p>DATA VISUALIZATION TO GO HERE?</p> */}
+        </Link> */}
+        {numberOfDays()}
       </section>
     );
   }
