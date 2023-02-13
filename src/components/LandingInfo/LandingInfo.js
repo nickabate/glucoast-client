@@ -5,13 +5,13 @@ export default function LandingInfo() {
   return (
     <section className="landinginfo">
       <NavLink className="landinginfo__link" to={`/welcome/about`}>
-        Button 1
+        About Us
       </NavLink>
       <NavLink className="landinginfo__link" to={`/welcome/howtouse`}>
-        Button 2
+        How to Use
       </NavLink>
       <NavLink className="landinginfo__link" to={`/welcome/diabetes`}>
-        Button 3
+        About Diabetes
       </NavLink>
     </section>
   );

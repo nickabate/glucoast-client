@@ -270,7 +270,7 @@ export default function EditDate() {
             <div className="editform__buttons">
               <button className="editform__submit">SUBMIT EDIT</button>
               <button className="editform__cancel" onClick={cancelEdit}>
-                CANCEL EDIT
+                CANCEL
               </button>
             </div>
           </form>

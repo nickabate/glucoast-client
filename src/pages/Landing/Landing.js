@@ -11,10 +11,14 @@ export default function Landing() {
     <section className="landing">
       <div className="landing__main">
         <div className="landing__container">
-          <h2>Welcome to GLUCOAST!</h2>
-          <p>Click on a button below to learn more about our app.</p>
-          <LandingInfo />
-          <LandingDetails learnId={learnId} />
+          <h2 className="landing__header">Welcome to GLUCOAST!</h2>
+          <p className="landing__text">
+            Click on a button below to learn more about our app.
+          </p>
+          <div className="landing__layout">
+            <LandingInfo />
+            <LandingDetails learnId={learnId} />
+          </div>
         </div>
       </div>
     </section>

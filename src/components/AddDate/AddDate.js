@@ -282,7 +282,7 @@ export default function AddDate() {
             <div className="addform__buttons">
               <button className="addform__submit">SUBMIT DATA</button>
               <button className="addform__cancel" onClick={cancelNew}>
-                CANCEL ADD
+                CANCEL
               </button>
             </div>
           </form>

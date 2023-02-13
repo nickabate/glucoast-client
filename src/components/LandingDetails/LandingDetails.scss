@@ -1,0 +1,22 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.landingdetails {
+  padding: 2rem;
+  width: 100%;
+  background-color: $primary-bg2;
+  border-radius: 0.6rem;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+
+  &__header {
+    color: $primary-head;
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+    line-height: 3rem;
+  }
+}
