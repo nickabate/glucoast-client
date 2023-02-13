@@ -118,7 +118,7 @@ export default function AddDate() {
     <section className="addform">
       <div className="addform__main">
         <div className="addform__container">
-          <h2 className="addform__header">{`Add a date for Week ${weekId}!`}</h2>
+          <h2 className="addform__header">{`Add a date for Week ${weekId}:`}</h2>
           <form onSubmit={newFormSubmit}>
             <div className="addform__grouping2">
               <label className="addform__label" htmlFor="weekday">

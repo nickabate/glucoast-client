@@ -1,0 +1,10 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.landinginfo {
+}
+
+.landinginfo__link.active {
+  font-weight: 600;
+  border-bottom: 0.2rem solid $primary-head;
+}

@@ -1,0 +1,21 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.landing {
+  background-color: $primary-bg2;
+  min-height: 78rem;
+
+  &__main {
+    max-width: 128rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  &__container {
+    margin: 0 2rem;
+    border: solid 0.2rem $primary-head;
+    border-radius: 0.6rem;
+    padding: 2.4rem;
+    background-color: $primary-bg;
+  }
+}

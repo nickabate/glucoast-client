@@ -7,7 +7,7 @@ export default function PageHeader() {
   const navigate = useNavigate();
 
   const toLanding = () => {
-    navigate("/welcome");
+    navigate("/welcome/about");
   };
 
   return (

@@ -67,9 +67,9 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
 
   if (!displayedWeek.length) {
     return (
-      <section>
-        <div>{`No data has been input for Week ${weekId}!`}</div>
-        <Link to={`/newdate/${weekId}`}>
+      <section className="activeday">
+        <p className="activeday__next">{`There is no information to display yet for Week ${weekId}.`}</p>
+        <Link className="activeday__add" to={`/newdate/${weekId}`}>
           Click here to add a date for this week.
         </Link>
       </section>

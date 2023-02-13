@@ -25,7 +25,11 @@ export default function DateBar({ allWeeks, weekId }) {
   }
 
   if (!currentWeek.length) {
-    return <div>No dates available for this week!</div>;
+    return (
+      <section className="datebar">
+        <p className="datebar__text">No dates available for this week!</p>
+      </section>
+    );
   }
 
   return (
