@@ -12,11 +12,19 @@
     color: $primary-head;
     font-size: 2rem;
     margin-bottom: 1.6rem;
+
+    @include mobile {
+      font-size: 1.8rem;
+    }
   }
 
   &__text {
     font-size: 1.6rem;
     margin-bottom: 1.6rem;
     line-height: 3rem;
+
+    @include mobile {
+      font-size: 1.4rem;
+    }
   }
 }

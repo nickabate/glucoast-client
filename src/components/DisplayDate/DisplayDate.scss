@@ -12,9 +12,18 @@ p {
   padding: 2.4rem;
   margin-top: 2rem;
 
+  @include mobile {
+    margin-top: 1.6rem;
+    padding: 1.6rem;
+  }
+
   &__next {
     text-align: center;
     font-size: 2rem;
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
   }
 
   &__none {
@@ -23,6 +32,10 @@ p {
     @include flex(row);
     justify-content: center;
     margin-top: 2rem;
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
   }
 
   &__add {
@@ -35,19 +48,34 @@ p {
     &:hover {
       font-weight: 600;
     }
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
   }
 
   &__display {
     @include flex(row);
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 2rem;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+
+    @include mobile {
+      @include flex(column);
+      padding: 0 1.6rem;
+    }
   }
 
   &__header {
     font-size: 2.4rem;
     color: $primary-head;
     text-align: center;
+
+    @include mobile {
+      margin-bottom: 0.8rem;
+    }
   }
 
   &__subheader {
@@ -62,6 +90,7 @@ p {
     @include flex(row);
     justify-content: center;
     gap: 3.2rem;
+    flex-wrap: wrap;
   }
 
   &__meal {
@@ -80,18 +109,29 @@ p {
   &__info {
     @include flex(row);
     justify-content: space-evenly;
-    margin: 2rem 0 2.4rem;
-    width: 79rem;
+    margin: 2.4rem auto;
+    width: fit-content;
     background-color: $primary-bg2;
     border-radius: 0.6rem;
     box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
-    padding: 2rem 0;
+    padding: 2rem;
+    gap: 1.6rem;
+
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem 1rem 0;
+    }
   }
 
   &__stats {
     @include flex(row);
     align-items: center;
     gap: 1.6rem;
+
+    @include mobile {
+      padding-bottom: 2rem;
+    }
   }
 
   &__icon {
@@ -100,6 +140,9 @@ p {
 
   &__visualization {
     @include flex(row);
+    width: 74vw;
+    max-width: 97.5rem;
+    height: 65rem;
     justify-content: center;
     align-items: center;
     background-color: $primary-bg2;
@@ -107,11 +150,31 @@ p {
     padding: 0 2rem;
     border-radius: 0.6rem;
     box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+
+    @include mobile {
+      @include flex(column);
+      padding: 0 1rem;
+      margin: 2rem auto;
+      width: 75vw;
+      height: 55vh;
+    }
+
+    @include tablet {
+      @include flex(column);
+      padding: 0 1rem;
+      margin: 2rem auto;
+      width: 75vw;
+      height: 65vh;
+    }
   }
 
   &__glucose {
     margin-bottom: 2rem;
     font-weight: 600;
+
+    @include tablet {
+      margin-top: 2rem;
+    }
   }
 
   &__levels {

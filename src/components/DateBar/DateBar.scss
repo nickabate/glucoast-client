@@ -9,11 +9,21 @@
   @include flex(row);
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
+
+  @include mobile {
+    gap: 1.6rem;
+  }
 
   &__text {
     text-decoration: none;
     font-size: 2.4rem;
     color: $primary-head;
+    text-align: center;
+
+    @include mobile {
+      font-size: 2rem;
+    }
   }
   &__date {
     text-decoration: none;
@@ -22,6 +32,10 @@
 
     &:hover {
       font-weight: 600;
+    }
+
+    @include mobile {
+      font-size: 2rem;
     }
   }
 }
