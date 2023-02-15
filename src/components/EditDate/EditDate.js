@@ -106,168 +106,196 @@ export default function EditDate() {
           </h2>
           <form onSubmit={editFormSubmit}>
             <div className="editform__grouping">
-              <label className="editform__label" htmlFor="meal1">
-                Meal 1:
-              </label>
-              <input
-                className="editform__input"
-                id="meal1"
-                name="meal1"
-                type="text"
-                placeholder="Enter meal..."
-                defaultValue={date.meal1}
-              />
-              <label className="editform__label" htmlFor="insulin1">
-                Insulin taken:
-              </label>
-              <input
-                className="editform__input"
-                id="insulin1"
-                name="insulin1"
-                type="text"
-                placeholder="Enter # of units..."
-                defaultValue={date.insulin1}
-              />
-              <label className="editform__label" htmlFor="preglucose1">
-                Pre glucose level:
-              </label>
-              <input
-                className="editform__input"
-                id="preglucose1"
-                name="preglucose1"
-                type="text"
-                placeholder="Before meal..."
-                defaultValue={date.preglucose1}
-              />
-              <label className="editform__label" htmlFor="postglucose1">
-                Post glucose level:
-              </label>
-              <input
-                className="editform__input"
-                id="postglucose1"
-                name="postglucose1"
-                type="text"
-                placeholder="After meal..."
-                defaultValue={date.postglucose1}
-              />
+              <div>
+                <label className="editform__label" htmlFor="meal1">
+                  Meal 1:
+                </label>
+                <input
+                  className="editform__input"
+                  id="meal1"
+                  name="meal1"
+                  type="text"
+                  placeholder="Enter meal..."
+                  defaultValue={date.meal1}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="insulin1">
+                  Insulin taken:
+                </label>
+                <input
+                  className="editform__input"
+                  id="insulin1"
+                  name="insulin1"
+                  type="text"
+                  placeholder="Enter # of units..."
+                  defaultValue={date.insulin1}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="preglucose1">
+                  Pre glucose level:
+                </label>
+                <input
+                  className="editform__input"
+                  id="preglucose1"
+                  name="preglucose1"
+                  type="text"
+                  placeholder="Before meal..."
+                  defaultValue={date.preglucose1}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="postglucose1">
+                  Post glucose level:
+                </label>
+                <input
+                  className="editform__input"
+                  id="postglucose1"
+                  name="postglucose1"
+                  type="text"
+                  placeholder="After meal..."
+                  defaultValue={date.postglucose1}
+                />
+              </div>
             </div>
             <div className="editform__grouping">
-              <label className="editform__label" htmlFor="meal2">
-                Meal 2:
-              </label>
-              <input
-                className="editform__input"
-                id="meal2"
-                name="meal2"
-                type="text"
-                placeholder="Enter meal..."
-                defaultValue={date.meal2}
-              />
-              <label className="editform__label" htmlFor="insulin2">
-                Insulin taken:
-              </label>
-              <input
-                className="editform__input"
-                id="insulin2"
-                name="insulin2"
-                type="text"
-                placeholder="Enter # of units..."
-                defaultValue={date.insulin2}
-              />
-              <label className="editform__label" htmlFor="preglucose2">
-                Pre glucose level:
-              </label>
-              <input
-                className="editform__input"
-                id="preglucose2"
-                name="preglucose2"
-                type="text"
-                placeholder="Before meal..."
-                defaultValue={date.preglucose2}
-              />
-              <label className="editform__label" htmlFor="postglucose2">
-                Post glucose level:
-              </label>
-              <input
-                className="editform__input"
-                id="postglucose2"
-                name="postglucose2"
-                type="text"
-                placeholder="After meal..."
-                defaultValue={date.postglucose2}
-              />
+              <div>
+                <label className="editform__label" htmlFor="meal2">
+                  Meal 2:
+                </label>
+                <input
+                  className="editform__input"
+                  id="meal2"
+                  name="meal2"
+                  type="text"
+                  placeholder="Enter meal..."
+                  defaultValue={date.meal2}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="insulin2">
+                  Insulin taken:
+                </label>
+                <input
+                  className="editform__input"
+                  id="insulin2"
+                  name="insulin2"
+                  type="text"
+                  placeholder="Enter # of units..."
+                  defaultValue={date.insulin2}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="preglucose2">
+                  Pre glucose level:
+                </label>
+                <input
+                  className="editform__input"
+                  id="preglucose2"
+                  name="preglucose2"
+                  type="text"
+                  placeholder="Before meal..."
+                  defaultValue={date.preglucose2}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="postglucose2">
+                  Post glucose level:
+                </label>
+                <input
+                  className="editform__input"
+                  id="postglucose2"
+                  name="postglucose2"
+                  type="text"
+                  placeholder="After meal..."
+                  defaultValue={date.postglucose2}
+                />
+              </div>
             </div>
             <div className="editform__grouping">
-              <label className="editform__label" htmlFor="meal3">
-                Meal 3:
-              </label>
-              <input
-                className="editform__input"
-                id="meal3"
-                name="meal3"
-                type="text"
-                placeholder="Enter meal..."
-                defaultValue={date.meal3}
-              />
-              <label className="editform__label" htmlFor="insulin3">
-                Insulin taken:
-              </label>
-              <input
-                className="editform__input"
-                id="insulin3"
-                name="insulin3"
-                type="text"
-                placeholder="Enter # of units..."
-                defaultValue={date.insulin3}
-              />
-              <label className="editform__label" htmlFor="preglucose3">
-                Pre glucose level:
-              </label>
-              <input
-                className="editform__input"
-                id="preglucose3"
-                name="preglucose3"
-                type="text"
-                placeholder="Before meal..."
-                defaultValue={date.preglucose3}
-              />
-              <label className="editform__label" htmlFor="postglucose3">
-                Post glucose level:
-              </label>
-              <input
-                className="editform__input"
-                id="postglucose3"
-                name="postglucose3"
-                type="text"
-                placeholder="After meal..."
-                defaultValue={date.postglucose3}
-              />
+              <div>
+                <label className="editform__label" htmlFor="meal3">
+                  Meal 3:
+                </label>
+                <input
+                  className="editform__input"
+                  id="meal3"
+                  name="meal3"
+                  type="text"
+                  placeholder="Enter meal..."
+                  defaultValue={date.meal3}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="insulin3">
+                  Insulin taken:
+                </label>
+                <input
+                  className="editform__input"
+                  id="insulin3"
+                  name="insulin3"
+                  type="text"
+                  placeholder="Enter # of units..."
+                  defaultValue={date.insulin3}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="preglucose3">
+                  Pre glucose level:
+                </label>
+                <input
+                  className="editform__input"
+                  id="preglucose3"
+                  name="preglucose3"
+                  type="text"
+                  placeholder="Before meal..."
+                  defaultValue={date.preglucose3}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="postglucose3">
+                  Post glucose level:
+                </label>
+                <input
+                  className="editform__input"
+                  id="postglucose3"
+                  name="postglucose3"
+                  type="text"
+                  placeholder="After meal..."
+                  defaultValue={date.postglucose3}
+                />
+              </div>
             </div>
             <div className="editform__grouping2">
-              <label className="editform__label" htmlFor="sleep">
-                Hours of sleep:
-              </label>
-              <input
-                className="editform__input"
-                id="sleep"
-                name="sleep"
-                type="text"
-                placeholder="# of hours..."
-                defaultValue={date.sleep}
-              />
-              <label className="editform__label" htmlFor="exercise">
-                Exercise today?
-              </label>
-              <select
-                className="editform__select"
-                id="exercise"
-                name="exercise"
-              >
-                <option value="Yes">Yes</option>
-                <option selected={isSelected(date.exercise)} value="No">
-                  No
-                </option>
-              </select>
+              <div>
+                <label className="editform__label" htmlFor="sleep">
+                  Hours of sleep:
+                </label>
+                <input
+                  className="editform__input"
+                  id="sleep"
+                  name="sleep"
+                  type="text"
+                  placeholder="# of hours..."
+                  defaultValue={date.sleep}
+                />
+              </div>
+              <div>
+                <label className="editform__label" htmlFor="exercise">
+                  Exercise today?
+                </label>
+                <select
+                  className="editform__select"
+                  id="exercise"
+                  name="exercise"
+                >
+                  <option value="Yes">Yes</option>
+                  <option selected={isSelected(date.exercise)} value="No">
+                    No
+                  </option>
+                </select>
+              </div>
             </div>
             <div className="editform__buttons">
               <button className="editform__submit">SUBMIT EDIT</button>

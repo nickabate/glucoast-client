@@ -142,7 +142,7 @@ p {
     @include flex(row);
     width: 74vw;
     max-width: 97.5rem;
-    height: 65rem;
+    height: 45rem;
     justify-content: center;
     align-items: center;
     background-color: $primary-bg2;
@@ -155,7 +155,7 @@ p {
       @include flex(column);
       padding: 0 1rem;
       margin: 2rem auto;
-      width: 75vw;
+      width: 70vw;
       height: 55vh;
     }
 
@@ -163,8 +163,8 @@ p {
       @include flex(column);
       padding: 0 1rem;
       margin: 2rem auto;
-      width: 75vw;
-      height: 65vh;
+      width: 65vw;
+      height: 55vh;
     }
   }
 

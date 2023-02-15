@@ -135,149 +135,181 @@ export default function AddDate() {
               </select>
             </div>
             <div className="addform__grouping">
-              <label className="addform__label" htmlFor="meal1">
-                Meal 1:
-              </label>
-              <input
-                id="meal1"
-                className="addform__input"
-                name="meal1"
-                type="text"
-                placeholder="Enter meal..."
-              />
-              <label className="addform__label" htmlFor="insulin1">
-                Insulin taken:
-              </label>
-              <input
-                id="insulin1"
-                className="addform__input"
-                name="insulin1"
-                type="text"
-                placeholder="Enter # of units..."
-              />
-              <label className="addform__label" htmlFor="preglucose1">
-                Pre glucose level:
-              </label>
-              <input
-                id="preglucose1"
-                className="addform__input"
-                name="preglucose1"
-                type="text"
-                placeholder="Before meal..."
-              />
-              <label className="addform__label" htmlFor="postglucose1">
-                Post glucose level:
-              </label>
-              <input
-                id="postglucose1"
-                className="addform__input"
-                name="postglucose1"
-                type="text"
-                placeholder="After meal..."
-              />
+              <div>
+                <label className="addform__label" htmlFor="meal1">
+                  Meal 1:
+                </label>
+                <input
+                  id="meal1"
+                  className="addform__input"
+                  name="meal1"
+                  type="text"
+                  placeholder="Enter meal..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="insulin1">
+                  Insulin taken:
+                </label>
+                <input
+                  id="insulin1"
+                  className="addform__input"
+                  name="insulin1"
+                  type="text"
+                  placeholder="Enter # of units..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="preglucose1">
+                  Pre glucose level:
+                </label>
+                <input
+                  id="preglucose1"
+                  className="addform__input"
+                  name="preglucose1"
+                  type="text"
+                  placeholder="Before meal..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="postglucose1">
+                  Post glucose level:
+                </label>
+                <input
+                  id="postglucose1"
+                  className="addform__input"
+                  name="postglucose1"
+                  type="text"
+                  placeholder="After meal..."
+                />
+              </div>
             </div>
             <div className="addform__grouping">
-              <label className="addform__label" htmlFor="meal2">
-                Meal 2:
-              </label>
-              <input
-                id="meal2"
-                className="addform__input"
-                name="meal2"
-                type="text"
-                placeholder="Enter meal..."
-              />
-              <label className="addform__label" htmlFor="insulin2">
-                Insulin taken:
-              </label>
-              <input
-                id="insulin2"
-                className="addform__input"
-                name="insulin2"
-                type="text"
-                placeholder="Enter # of units..."
-              />
-              <label className="addform__label" htmlFor="preglucose2">
-                Pre glucose level:
-              </label>
-              <input
-                id="preglucose2"
-                className="addform__input"
-                name="preglucose2"
-                type="text"
-                placeholder="Before meal..."
-              />
-              <label className="addform__label" htmlFor="postglucose2">
-                Post glucose level:
-              </label>
-              <input
-                id="postglucose2"
-                className="addform__input"
-                name="postglucose2"
-                type="text"
-                placeholder="After meal..."
-              />
+              <div>
+                <label className="addform__label" htmlFor="meal2">
+                  Meal 2:
+                </label>
+                <input
+                  id="meal2"
+                  className="addform__input"
+                  name="meal2"
+                  type="text"
+                  placeholder="Enter meal..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="insulin2">
+                  Insulin taken:
+                </label>
+                <input
+                  id="insulin2"
+                  className="addform__input"
+                  name="insulin2"
+                  type="text"
+                  placeholder="Enter # of units..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="preglucose2">
+                  Pre glucose level:
+                </label>
+                <input
+                  id="preglucose2"
+                  className="addform__input"
+                  name="preglucose2"
+                  type="text"
+                  placeholder="Before meal..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="postglucose2">
+                  Post glucose level:
+                </label>
+                <input
+                  id="postglucose2"
+                  className="addform__input"
+                  name="postglucose2"
+                  type="text"
+                  placeholder="After meal..."
+                />
+              </div>
             </div>
             <div className="addform__grouping">
-              <label className="addform__label" htmlFor="meal3">
-                Meal 3:
-              </label>
-              <input
-                id="meal3"
-                className="addform__input"
-                name="meal3"
-                type="text"
-                placeholder="Enter meal..."
-              />
-              <label className="addform__label" htmlFor="insulin3">
-                Insulin taken:
-              </label>
-              <input
-                id="insulin3"
-                className="addform__input"
-                name="insulin3"
-                type="text"
-                placeholder="Enter # of units..."
-              />
-              <label className="addform__label" htmlFor="preglucose3">
-                Pre glucose level:
-              </label>
-              <input
-                id="preglucose3"
-                className="addform__input"
-                name="preglucose3"
-                type="text"
-                placeholder="Before meal..."
-              />
-              <label className="addform__label" htmlFor="postglucose3">
-                Post glucose level:
-              </label>
-              <input
-                id="postglucose3"
-                className="addform__input"
-                name="postglucose3"
-                type="text"
-                placeholder="After meal..."
-              />
+              <div>
+                <label className="addform__label" htmlFor="meal3">
+                  Meal 3:
+                </label>
+                <input
+                  id="meal3"
+                  className="addform__input"
+                  name="meal3"
+                  type="text"
+                  placeholder="Enter meal..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="insulin3">
+                  Insulin taken:
+                </label>
+                <input
+                  id="insulin3"
+                  className="addform__input"
+                  name="insulin3"
+                  type="text"
+                  placeholder="Enter # of units..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="preglucose3">
+                  Pre glucose level:
+                </label>
+                <input
+                  id="preglucose3"
+                  className="addform__input"
+                  name="preglucose3"
+                  type="text"
+                  placeholder="Before meal..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="postglucose3">
+                  Post glucose level:
+                </label>
+                <input
+                  id="postglucose3"
+                  className="addform__input"
+                  name="postglucose3"
+                  type="text"
+                  placeholder="After meal..."
+                />
+              </div>
             </div>
             <div className="addform__grouping2">
-              <label className="addform__label" htmlFor="sleep">
-                Hours of sleep:
-              </label>
-              <input
-                id="sleep"
-                className="addform__input"
-                name="sleep"
-                type="text"
-                placeholder="# of hours..."
-              />
-              <label className="addform__label" htmlFor="exercise">
-                Exercise today?
-              </label>
-              <select id="exercise" className="addform__select" name="exercise">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
+              <div>
+                <label className="addform__label" htmlFor="sleep">
+                  Hours of sleep:
+                </label>
+                <input
+                  id="sleep"
+                  className="addform__input"
+                  name="sleep"
+                  type="text"
+                  placeholder="# of hours..."
+                />
+              </div>
+              <div>
+                <label className="addform__label" htmlFor="exercise">
+                  Exercise today?
+                </label>
+                <select
+                  id="exercise"
+                  className="addform__select"
+                  name="exercise"
+                >
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
             </div>
             <div className="addform__buttons">
               <button className="addform__submit">SUBMIT DATA</button>
