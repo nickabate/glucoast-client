@@ -23,6 +23,19 @@
     &:hover {
       background-color: $primary-head;
     }
+
+    @include mobile {
+      margin: 0;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+  }
+
+  @include mobile {
+    @include flex(row);
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
   }
 }
 

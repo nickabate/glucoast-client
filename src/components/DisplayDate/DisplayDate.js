@@ -10,6 +10,7 @@ import {
   YAxis,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 import bed from "../../assets/icons/bed.svg";
 import health from "../../assets/icons/gym.svg";
@@ -136,24 +137,27 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
   ];
 
   const renderLineChart = (
-    <LineChart
-      width={630}
-      height={300}
-      data={chartData}
-      margin={{
-        top: 20,
-        right: 20,
-        bottom: 20,
-        left: 0,
-      }}
-    >
-      <Line type="monotone" dataKey="mmol/L" stroke="#094067" />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-      <XAxis dataKey="name" />
-      <YAxis tickCount={6} domain={[0, 12]} />
-      <Tooltip />
-      <Legend />
-    </LineChart>
+    <ResponsiveContainer>
+      <LineChart
+        // width={630}
+        // height={300}
+
+        data={chartData}
+        margin={{
+          top: 20,
+          right: 30,
+          bottom: 20,
+          left: 0,
+        }}
+      >
+        <Line type="monotone" dataKey="mmol/L" stroke="#094067" />
+        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+        <XAxis dataKey="name" />
+        <YAxis tickCount={6} domain={[0, 12]} />
+        <Tooltip />
+        <Legend />
+      </LineChart>
+    </ResponsiveContainer>
   );
 
   const calculateAverage = () => {
@@ -221,39 +225,39 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
           <p>After meal - {displayedDate.postglucose3} mmol/L</p>
         </div>
       </div>
-      <div className="activeday__container">
-        <div className="activeday__info">
-          <div className="activeday__stats">
-            <img className="activeday__icon" src={bed} alt="Bed" />
-            <p>You got {displayedDate.sleep} hours of sleep today.</p>
-          </div>
-          <div className="activeday__stats">
-            <img className="activeday__icon" src={health} alt="Health" />
-            <p>
-              {displayedDate.exercise === "Yes"
-                ? "You exercised today - great job!"
-                : "No exercise logged today."}
-            </p>
-          </div>
+      {/* <div className="activeday__container"> */}
+      <div className="activeday__info">
+        <div className="activeday__stats">
+          <img className="activeday__icon" src={bed} alt="Bed" />
+          <p>You got {displayedDate.sleep} hours of sleep today.</p>
+        </div>
+        <div className="activeday__stats">
+          <img className="activeday__icon" src={health} alt="Health" />
+          <p>
+            {displayedDate.exercise === "Yes"
+              ? "You exercised today - great job!"
+              : "No exercise logged today."}
+          </p>
         </div>
       </div>
-      <div>
-        <h3 className="activeday__levels">
-          Here is a visual summary of your glucose levels logged during the day:
-        </h3>
-        <div className="activeday__visualization">
-          <div>
-            <p className="activeday__glucose">
-              Your average glucose level today was {calculateAverage()} mmol/L.
-            </p>
-            <p>
-              You took a total of {totalInsulin()} units of insulin at meals
-              today.
-            </p>
-          </div>
-          <div>{renderLineChart}</div>
+      {/* </div> */}
+      <h3 className="activeday__levels">
+        Here is a visual summary of your glucose levels logged during the day:
+      </h3>
+
+      <div className="activeday__visualization">
+        <div>
+          <p className="activeday__glucose">
+            Your average glucose level today was {calculateAverage()} mmol/L.
+          </p>
+          <p>
+            You took a total of {totalInsulin()} units of insulin at meals
+            today.
+          </p>
         </div>
+        {renderLineChart}
       </div>
+
       <div className="activeday__actions">
         <Link className="activeday__back" to={`/${weekId}`}>
           <img className="activeday__arrow" src={back} alt="Back arrow" /> Click

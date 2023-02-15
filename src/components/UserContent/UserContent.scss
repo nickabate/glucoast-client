@@ -11,9 +11,17 @@
     @include flex(row);
     max-width: 128rem;
     min-height: 78rem;
+
+    @include mobile {
+      @include flex(column);
+    }
   }
   &__container2 {
     margin-left: 2rem;
     width: 100%;
+
+    @include mobile {
+      margin: 0;
+    }
   }
 }
