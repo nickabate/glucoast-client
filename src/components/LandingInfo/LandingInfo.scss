@@ -1,0 +1,43 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.landinginfo {
+  @include flex(column);
+
+  &__link {
+    width: 14.5rem;
+    text-decoration: none;
+    background-color: $primary-btn;
+    color: $primary-bg;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    height: 5rem;
+    @include flex(row);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      background-color: $primary-head;
+    }
+
+    @include mobile {
+      margin: 0;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+  }
+
+  @include mobile {
+    @include flex(row);
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+  }
+}
+
+.landinginfo__link.active {
+  background-color: $primary-head;
+}

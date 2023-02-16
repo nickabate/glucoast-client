@@ -1,0 +1,26 @@
+//Alternate font
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../../assets/fonts/Quicksand-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../../assets/fonts/Quicksand-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+// Primary font
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../assets/fonts//Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}

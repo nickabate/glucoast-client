@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# GLUCOAST
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**_GLUCOAST is an all-in-one dashboard to assist diabetics in managing their glucose levels throughout the day._**
 
-## Available Scripts
+We help users to track their blood sugar (glucose) levels throughout the day, by keeping a log of different variables and how they affected their blood sugar levels. GLUCOAST’s goal is to help you coast throughout the day by making informed decisions on how to manage your glucose levels without unintentionally causing glucose levels to rise or crash during your day, which is a diabetic’s biggest daily challenge.
 
-In the project directory, you can run:
+I created GLUCOAST as my capstone project for BrainStation's Software Engineering bootcamp. In two weeks, we were required to develop a full-stack application utilizing the various technologies we learned throughout the semester. GLUCOAST's front-end was developed with React and the back-end runs an Express server on Node. More info regarding future updates to come soon! Future implementations will include user authorization and multiple user databases, third party API inclusion and user suggestions based on past data.
 
-### `npm start`
+This is a React application. The front-end is fully responsive from mobile to desktop viewports with dynamic data visualization, and the back-end runs Express on top of NodeJS supporting database CRUD operations. Sample data has been prepopulated within the datebase for one user with the ability to add, edit and delete data. Creating this project was a great utilization of the skills I learned in my bootcamp experience and utilizing my skills to develop a fully functioning full-stack application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Thanks for checking out my work! Feel free to reach out to me with any questions or to connect.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+\- Nick Abate
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Please ensure you have `Node.js` and `npm` installed to run this application. Follow these steps to run a local instance of GLUCOAST:
 
-### `npm run build`
+1. Download or clone these repositories and save them in the a new parent folder.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   There are two repos to download: [GLUCOAST - Client](https://github.com/nickabate/glucoast-client) and [GLUCOAST - Server](https://github.com/nickabate/glucoast-server).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Server-side folder & setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install the required dependencies:
 
-### `npm run eject`
+   ```
+   $ cd server
+   $ npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Set up environment variables:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   The included `.env.sample` file can be renamed to `.env`. The ports will run default as shown within the existing file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Run the server:
+   ```
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Client-side folder & setup
 
-## Learn More
+5. Install the required dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```
+   $ cd ../client
+   $ npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. Start the React application:
 
-### Code Splitting
+   ```
+   $ npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+7. Enjoy!

@@ -1,0 +1,46 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.datebar {
+  background-color: $primary-bg;
+  border: solid 0.2rem $primary-head;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  @include flex(row);
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  @include mobile {
+    gap: 1.6rem;
+  }
+
+  &__text {
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: $primary-head;
+    text-align: center;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+  &__date {
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: $primary-head;
+
+    &:hover {
+      font-weight: 600;
+    }
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+}
+
+.datebar__date.active {
+  font-weight: 600;
+  border-bottom: 0.2rem solid $primary-head;
+}

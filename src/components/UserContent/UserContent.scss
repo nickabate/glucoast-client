@@ -1,0 +1,27 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.main {
+  background-color: $primary-bg2;
+
+  &__container1 {
+    margin: 0 auto;
+    background-color: $primary-bg2;
+    padding: 2.4rem;
+    @include flex(row);
+    max-width: 128rem;
+    min-height: 78rem;
+
+    @include mobile {
+      @include flex(column);
+    }
+  }
+  &__container2 {
+    margin-left: 2rem;
+    width: 100%;
+
+    @include mobile {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,244 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+p {
+  font-size: 1.6rem;
+}
+
+.activeday {
+  background-color: $primary-bg;
+  border: solid 0.2rem $primary-head;
+  border-radius: 0.6rem;
+  padding: 2.4rem;
+  margin-top: 2rem;
+
+  @include mobile {
+    margin-top: 1.6rem;
+    padding: 1.6rem;
+  }
+
+  &__next {
+    text-align: center;
+    font-size: 2rem;
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__none {
+    color: $primary-head;
+    font-size: 2rem;
+    @include flex(row);
+    justify-content: center;
+    margin-top: 2rem;
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__add {
+    text-decoration: none;
+    color: $primary-head;
+    font-size: 2rem;
+    @include flex(row);
+    justify-content: center;
+    margin-top: 2rem;
+    &:hover {
+      font-weight: 600;
+    }
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__display {
+    @include flex(row);
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+
+    @include mobile {
+      @include flex(column);
+      padding: 0 1.6rem;
+    }
+  }
+
+  &__header {
+    font-size: 2.4rem;
+    color: $primary-head;
+    text-align: center;
+
+    @include mobile {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  &__subheader {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $primary-head;
+    margin-top: 1.6rem;
+  }
+
+  &__meals {
+    margin: 2.4rem 0 0.8rem;
+    @include flex(row);
+    justify-content: center;
+    gap: 3.2rem;
+    flex-wrap: wrap;
+  }
+
+  &__meal {
+    padding: 0.4rem 2rem 2rem;
+    background-color: $primary-bg2;
+    border-radius: 0.6rem;
+    width: 24rem;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  &__container {
+    @include flex(row);
+    justify-content: center;
+  }
+
+  &__info {
+    @include flex(row);
+    justify-content: space-evenly;
+    margin: 2.4rem auto;
+    width: fit-content;
+    background-color: $primary-bg2;
+    border-radius: 0.6rem;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    gap: 1.6rem;
+
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem 1rem 0;
+    }
+  }
+
+  &__stats {
+    @include flex(row);
+    align-items: center;
+    gap: 1.6rem;
+
+    @include mobile {
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__icon {
+    width: 3.6rem;
+  }
+
+  &__visualization {
+    @include flex(row);
+    width: 74vw;
+    max-width: 97.5rem;
+    height: 45rem;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-bg2;
+    margin: 2.4rem 2.4rem 3.2rem;
+    padding: 0 2rem;
+    border-radius: 0.6rem;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+
+    @include mobile {
+      @include flex(column);
+      padding: 0 1rem;
+      margin: 2rem auto;
+      width: 70vw;
+      height: 55vh;
+    }
+
+    @include tablet {
+      @include flex(column);
+      padding: 0 1rem;
+      margin: 2rem auto;
+      width: 65vw;
+      height: 55vh;
+    }
+  }
+
+  &__glucose {
+    margin-bottom: 2rem;
+    font-weight: 600;
+
+    @include tablet {
+      margin-top: 2rem;
+    }
+  }
+
+  &__levels {
+    color: $primary-head;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__actions {
+    @include flex(row);
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__back {
+    text-decoration: none;
+    color: $primary-head;
+    font-size: 2rem;
+    @include flex(row);
+    align-items: center;
+
+    &:hover {
+      font-weight: 600;
+      border-bottom: 0.2rem solid $primary-head;
+    }
+  }
+
+  &__arrow {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__editbtn {
+    background-color: $primary-btn;
+    color: $primary-bg;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    font-family: $font-stack;
+    cursor: pointer;
+    height: 5rem;
+    font-weight: 600;
+    min-width: 10rem;
+
+    &:hover {
+      background-color: $primary-head;
+    }
+  }
+
+  &__deletebtn {
+    background-color: $secondary-second;
+    color: $primary-bg;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+    font-family: $font-stack;
+    cursor: pointer;
+    height: 5rem;
+    margin-left: 2rem;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $secondary-third;
+    }
+  }
+}
