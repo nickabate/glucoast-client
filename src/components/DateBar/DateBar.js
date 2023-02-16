@@ -1,19 +1,12 @@
 import "./DateBar.scss";
-// import axios from "axios";
-// import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function DateBar({ allWeeks, weekId }) {
-  // const params = useParams();
-  // const weekId = params.weekId;
-
-  // const currentWeek = allWeeks[weekId - 1];
-  // console.log(currentWeek);
   const currentWeek = allWeeks
     .filter((current) => current.week === +weekId)
     .sort((a, b) => a.day - b.day);
-  // console.log(currentWeek);
 
+  // Default date bar content
   if (!weekId) {
     return (
       <section className="datebar">
@@ -23,6 +16,8 @@ export default function DateBar({ allWeeks, weekId }) {
       </section>
     );
   }
+
+  // If no data exists for current week
 
   if (!currentWeek.length) {
     return (

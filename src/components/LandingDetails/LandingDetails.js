@@ -1,6 +1,7 @@
 import "./LandingDetails.scss";
 
 export default function LandingDetails({ learnId }) {
+  // Content rendered based on URL param prop
   if (learnId === "about") {
     return (
       <section className="landingdetails">
@@ -21,6 +22,8 @@ export default function LandingDetails({ learnId }) {
       </section>
     );
   }
+
+  // Content rendered based on URL param prop
 
   if (learnId === "howtouse") {
     return (
@@ -44,6 +47,8 @@ export default function LandingDetails({ learnId }) {
       </section>
     );
   }
+
+  // Content rendered based on URL param prop
 
   if (learnId === "diabetes") {
     return (

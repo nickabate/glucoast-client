@@ -17,7 +17,6 @@ import health from "../../assets/icons/gym.svg";
 import back from "../../assets/icons/back.svg";
 
 export default function DisplayDate({ dateId, weekId, allWeeks }) {
-  // const displayedWeek = allWeeks[weekId - 1];
   const displayedWeek = allWeeks
     .filter((current) => current.week === +weekId)
     .sort((a, b) => a.day - b.day);
@@ -31,10 +30,8 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
       const currentDate = displayedWeek.findIndex((item) => {
         return item.id === dateId;
       });
-      // console.log(currentDate);
 
       setDisplayedDate(displayedWeek[currentDate]);
-      // setDisplayedDate(displayedWeek[dateId - 1]);
     }
   }, [dateId, displayedWeek]);
 
@@ -51,10 +48,8 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     deleteItem();
     navigate(`/`);
   };
-  // console.log(displayedWeek);
-  // console.log(dateId);
-  // console.log(displayedDate);
 
+  // When no week is selected
   if (!weekId) {
     return (
       <section className="activeday">
@@ -66,6 +61,7 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     );
   }
 
+  // Week with no content logged
   if (!displayedWeek.length) {
     return (
       <section className="activeday">
@@ -77,6 +73,7 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     );
   }
 
+  // Option to add date if all seven weekdays haven't been logged
   const numberOfDays = () => {
     if (displayedWeek.length === 7) {
       return (
@@ -93,13 +90,11 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     }
   };
 
+  // When no active weekday is selected in current week
   if (!dateId) {
     return (
       <section className="activeday">
         <p className="activeday__next">{`Select a date above to see your activity for Week ${weekId}!`}</p>
-        {/* <Link className="activeday__add" to={`/newdate/${weekId}`}>
-          Or, click here to add another date for this week.
-        </Link> */}
         {numberOfDays()}
       </section>
     );
@@ -109,6 +104,7 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     return <div>No displayed date state!</div>;
   }
 
+  // Set dynamic data to populate for data visualization
   const chartData = [
     {
       name: "Pre meal 1",
@@ -136,12 +132,10 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     },
   ];
 
+  // Data visualization setup
   const renderLineChart = (
     <ResponsiveContainer>
       <LineChart
-        // width={630}
-        // height={300}
-
         data={chartData}
         margin={{
           top: 20,
@@ -160,6 +154,7 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
     </ResponsiveContainer>
   );
 
+  // User statistics calculated based on current date selected
   const calculateAverage = () => {
     let averageNum =
       (Number(displayedDate.preglucose1) +
@@ -240,7 +235,6 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
           </p>
         </div>
       </div>
-      {/* </div> */}
       <h3 className="activeday__levels">
         Here is a visual summary of your glucose levels logged during the day:
       </h3>
@@ -263,14 +257,6 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
           <img className="activeday__arrow" src={back} alt="Back arrow" /> Click
           here to go back to this week's summary...
         </Link>
-        {/* <div>
-          <button className="activeday__editbtn" onClick={editDate}>
-            EDIT DATE
-          </button>
-          <button className="activeday__deletebtn" onClick={deleteDate}>
-            DELETE DATE
-          </button>
-        </div> */}
       </div>
     </section>
   );
