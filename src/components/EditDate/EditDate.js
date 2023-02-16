@@ -50,6 +50,7 @@ export default function EditDate() {
       });
     }
 
+    // Form data validation
     if (
       !e.target.meal1.value ||
       !e.target.meal2.value ||
@@ -89,6 +90,7 @@ export default function EditDate() {
     <div>Date content is loading...</div>;
   }
 
+  // Function to call on populating form value for default option selected
   const isSelected = (exercise) => {
     if (exercise === "Yes") {
       return "";

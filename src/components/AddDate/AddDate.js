@@ -30,6 +30,7 @@ export default function AddDate() {
   const newFormSubmit = (e) => {
     e.preventDefault();
 
+    // Return date number based on date select option - for database only
     const dateNum = (value) => {
       switch (value) {
         case "Sunday":
@@ -74,6 +75,7 @@ export default function AddDate() {
       });
     }
 
+    // Form validation before submission
     if (
       !e.target.meal1.value ||
       !e.target.meal2.value ||
@@ -94,6 +96,7 @@ export default function AddDate() {
       return;
     }
 
+    // Validation if weekday exists in current week already before submission
     if (existingDays.indexOf(dateNum(e.target.weekday.value)) !== -1) {
       alert(
         `This date has already been logged for Week ${weekId}! Please select a new date.`
