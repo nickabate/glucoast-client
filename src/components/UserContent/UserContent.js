@@ -6,6 +6,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import DisplayDate from "../DisplayDate/DisplayDate";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 export default function UserContent() {
   const [allWeeks, setAllWeeks] = useState([]);
 
@@ -17,7 +19,7 @@ export default function UserContent() {
   useEffect(() => {
     async function getWeeks() {
       try {
-        const { data } = await axios.get("http://localhost:8080/api");
+        const { data } = await axios.get(`${API_URL}`);
         setAllWeeks(data);
       } catch (e) {
         console.log("Error:", e);
