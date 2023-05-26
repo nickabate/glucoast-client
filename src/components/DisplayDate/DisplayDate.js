@@ -16,6 +16,8 @@ import bed from "../../assets/icons/bed.svg";
 import health from "../../assets/icons/gym.svg";
 import back from "../../assets/icons/back.svg";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 export default function DisplayDate({ dateId, weekId, allWeeks }) {
   const displayedWeek = allWeeks
     .filter((current) => current.week === +weekId)
@@ -41,7 +43,7 @@ export default function DisplayDate({ dateId, weekId, allWeeks }) {
 
   const deleteDate = () => {
     async function deleteItem() {
-      await axios.delete(`http://localhost:8080/api/${dateId}`);
+      await axios.delete(`${API_URL}/${dateId}`);
     }
 
     alert("Date has been deleted!");

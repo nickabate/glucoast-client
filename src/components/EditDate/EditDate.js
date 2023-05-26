@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 export default function EditDate() {
   const [date, setDate] = useState({});
   const params = useParams();
@@ -13,7 +15,7 @@ export default function EditDate() {
   useEffect(() => {
     async function getDate() {
       try {
-        const { data } = await axios.get(`http://localhost:8080/api/${dateId}`);
+        const { data } = await axios.get(`${API_URL}/${dateId}`);
         setDate(data);
         // console.log(data);
       } catch (e) {
@@ -27,7 +29,7 @@ export default function EditDate() {
     e.preventDefault();
 
     async function editDate() {
-      await axios.put(`http://localhost:8080/api/${dateId}`, {
+      await axios.put(`${API_URL}/${dateId}`, {
         id: date.id,
         userid: date.userid,
         week: date.week,
@@ -89,15 +91,6 @@ export default function EditDate() {
   if (!date) {
     <div>Date content is loading...</div>;
   }
-
-  // Function to call on populating form value for default option selected
-  const isSelected = (exercise) => {
-    if (exercise === "Yes") {
-      return "";
-    } else {
-      return "selected";
-    }
-  };
 
   return (
     <section className="editform">
@@ -291,11 +284,10 @@ export default function EditDate() {
                   className="editform__select"
                   id="exercise"
                   name="exercise"
+                  defaultValue={date.exercise}
                 >
                   <option value="Yes">Yes</option>
-                  <option selected={isSelected(date.exercise)} value="No">
-                    No
-                  </option>
+                  <option value="No">No</option>
                 </select>
               </div>
             </div>
