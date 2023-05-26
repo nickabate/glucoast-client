@@ -28,6 +28,10 @@ export default function UserContent() {
     getWeeks();
   }, [weekId]);
 
+  if (!allWeeks) {
+    return <div>Loading content...</div>;
+  }
+
   return (
     <main className="main">
       <section className="main__container1">
