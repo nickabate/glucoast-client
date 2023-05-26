@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 export default function AddDate() {
   const [existingDays, setExistingDays] = useState([]);
   const params = useParams();
@@ -13,7 +15,7 @@ export default function AddDate() {
   useEffect(() => {
     async function getDays() {
       try {
-        const { data } = await axios.get("http://localhost:8080/api");
+        const { data } = await axios.get(`${API_URL}`);
 
         let dateArray = [];
         const allDates = data.filter((day) => day.week === +weekId);
@@ -53,7 +55,7 @@ export default function AddDate() {
     };
 
     async function newDate() {
-      await axios.post(`http://localhost:8080/api/`, {
+      await axios.post(`${API_URL}`, {
         userid: "user1",
         week: +weekId,
         weekday: e.target.weekday.value,
