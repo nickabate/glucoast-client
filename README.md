@@ -4,6 +4,9 @@
 
 GLUCOAST is an all-in-one dashboard to assist diabetics in managing their glucose levels throughout the day.
 
+[🔗 GLUCOAST - Client](https://github.com/nickabate/glucoast-client)  
+[🔗 GLUCOAST - Server](https://github.com/nickabate/glucoast-server)
+
 ![Demo screenshot](./demo/screenshot.png)
 
 This is a brief regarding one of my capstone projects completed during my Software Engineering bootcamp. We were required to develop a full-stack application utilizing the various technologies we learned throughout the semester. 
@@ -26,4 +29,3 @@ Thanks for checking out my work! Feel free to reach out to me with any questions
 - Portfolio - [Live Site](https://nickabate.dev/)
 - LinkedIn - [Nick Abate](https://www.linkedin.com/in/nick-abate/)
 - Twitter - [@thatdevnick](https://twitter.com/thatdevnick)
-
